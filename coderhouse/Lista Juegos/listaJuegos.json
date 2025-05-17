@@ -1,0 +1,34 @@
+
+   { "juegos": [
+      {
+        "nombre": "Mario Kart",
+        "tipo": "Carreras",
+        "tiempo": "45",
+        "precio": "50"
+      },
+      {
+        "nombre": "Zelda: Breath of the Wild",
+        "tipo": "Aventura",
+        "tiempo": "120",
+        "precio": "70"
+      },
+      {
+        "nombre": "FIFA 23",
+        "tipo": "Deportes",
+        "tiempo": "30",
+        "precio": "60"
+      },
+      {
+        "nombre": "Minecraft",
+        "tipo": "Construcción",
+        "tiempo": "90",
+        "precio": "30"
+      },
+      {
+        "nombre": "Among Us",
+        "tipo": "Social",
+        "tiempo": "20",
+        "precio": "5"
+      }
+    ]
+  }
