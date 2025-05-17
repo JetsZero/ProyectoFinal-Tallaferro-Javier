@@ -1,6 +1,6 @@
 
 let juegos = JSON.parse(localStorage.getItem("juegos")) || [];
-
+//let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 class Juego {
     constructor(nombre, tipo, tiempo, precio){
         this.nombre = nombre
@@ -10,32 +10,8 @@ class Juego {
     }
 }
 
-let juegosContainer = document.getElementById("games")
-
-let nombreInput =document.getElementById("nombre")
-let tipoInput = document.getElementById("tipo")
-let tiempoInput = document.getElementById("tiempo")
-let precioInput = document.getElementById("precio");
-let generoInput = document.getElementById("generoBuscar")
-//let salida = document.getElementById("salida")
-
-let agregar =document.getElementById("agregar")
-let ver = document.getElementById("ver")
-let busqueda = document.getElementById("busqueda")
-let borrar = document.getElementById("borrar")
-let busquedaTipo = document.getElementById("busquedaTipo")
-let editar = document.getElementById("editar")
-
-function vaciarInput (){
-    nombreInput.value = "";
-    tipoInput.value = "";
-    tiempoInput.value = "";
-    precioInput.value = "";
-    busquedaTipo.value ="";
-}
-//funcion para guardar juego a la lista de juegos
-function guardar (){
-    localStorage.setItem("juegos", JSON.stringify(juegos))
+function almacenar() {
+    localStorage.setItem("juegos", JSON.stringify(juegos));
 }
 //funcion para agregar juego a la lista de juegos
 function renderJuegos(listaJuegos){
@@ -51,6 +27,7 @@ function renderJuegos(listaJuegos){
         juegosContainer.appendChild(contenedor)
     })
 }
+
 async function cargaJuegosJSON() {
     if(juegos.length > 0){
         renderJuegos(juegos);
@@ -68,10 +45,7 @@ async function cargaJuegosJSON() {
     }
     
 }
-renderJuegos(juegos)
-function almacenar (){
-    localStorage.setItem("juegos",JSON.stringify(juegos))
-}
+
 cargaJuegosJSON()
 
 agregar.onclick =()=>{
@@ -93,7 +67,9 @@ agregar.onclick =()=>{
 ver.onclick=()=>{
    renderJuegos(juegos)
 }
-
+// verSeleccionados.onclick=()=>{
+//    renderJuegos(carrito)
+// }
 //funcion para buscar los juegos que comparten tipo
 busquedaTipo.onclick = () =>{
     let tipo = generoInput.value
@@ -119,7 +95,6 @@ editar.onclick = () => {
     
 }
 
-
 //funcion para buscar objeto juego
 busqueda.onclick = () =>{
     let nombre = nombreInput.value
@@ -130,15 +105,23 @@ busqueda.onclick = () =>{
     vaciarInput()
 } 
 
+borrarSeleccionados.onclick = () =>{
+    let nombre = nombreInput.value
+    let juego = juegos.find(buscar => buscar.nombre.toLowerCase() == nombre.toLowerCase() ) || null;
+    if (juego){
+        juegos = juegos.filter(buscar => buscar.nombre.toLowerCase() != nombre.toLowerCase())
+        almacenar()
+        renderJuegos(juegos)
+    }
+    else{
+        vaciarInput()
+        return
+    }
+}
  borrar.onclick=()=>{
     juegos =[]
     localStorage.removeItem("juegos")
     juegosContainer.innerHTML = "";
     vaciarInput()
 }
-
-// let input = document.getElementById("input")
-// input.onkeyup = () =>{
-
-// }
 
