@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciona tu perfil</title>
+    <link rel="stylesheet" href="./css/boostrap.min.css">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header text-center bg-primary text-white">
+                    <h2>Selecciona tu perfil</h2>
+                </div>
+                <div class="card-body text-center">
+                    <button class="btn btn-info w-50 mb-3" id="btnCliente">Cliente</button>
+                    <button class="btn btn-warning w-50" id="btnAdmin">Administrador</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById("btnCliente").onclick = () => {
+    window.location.href = "interfazVisualCliente.html";
+};
+document.getElementById("btnAdmin").onclick = () => {
+    window.location.href = "login.html";
+};
+</script>
+</body>
+</html>

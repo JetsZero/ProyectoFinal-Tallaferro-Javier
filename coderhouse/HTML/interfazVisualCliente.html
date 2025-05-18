@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Cliente</title>
+    <link rel="stylesheet" href="./css/boostrap.min.css">
+    <script defer src="../domElementos/elementos.js"></script>
+    <script defer src="../js/simuladorCliente.js"></script>
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header text-center bg-info text-white">
+                    <h2>Panel Cliente</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        <input id="nombre" class="form-control mb-2" placeholder="Nombre del juego">
+                        <input id="tipo" class="form-control mb-2" placeholder="Tipo de juego">
+                        <input id="tiempo" class="form-control mb-2" placeholder="Duración del juego">
+                        <input id="precio" type="number" class="form-control mb-2" placeholder="Precio">
+                        <input id="generoBuscar" class="form-control mb-2" placeholder="Buscar por tipo de juego">
+                    </div>
+                    <div class="d-grid gap-2 mb-2">
+                        <button id="ver" class="btn btn-secondary">Ver juegos</button>
+                        <button id="busqueda" class="btn btn-info">Buscar por nombre</button>
+                        <button id="busquedaTipo" class="btn btn-info">Buscar por tipo</button>
+                        <button id="verSeleccionados" class="btn btn-primary">Ver seleccionados</button>
+                    </div>
+                    <button type="button" class="btn btn-link w-100" id="volverInicio">Volver</button>
+                    <section id="games" class="mt-3"></section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById("volverInicio").onclick = () => {
+    window.location.href = "inicio.html";
+};
+</script>
+</body>
+</html>
