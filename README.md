@@ -1,7 +1,7 @@
 # ProyectoFinal-Tallaferro-Javier
 simulador tienda juegos
 
-El proyecot es un simulador de tienda de juegos desarrollado, orientado a la gestión y simulación de compra de videojuegos tanto para administradores como para clientes.
+El proyecto es un simulador de tienda de juegos, orientado a la gestión y simulación de compra de videojuegos tanto para administradores como para clientes.
 
 ## Funcionalidad principal
 
