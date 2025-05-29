@@ -5,9 +5,9 @@ El proyecot es un simulador de tienda de juegos desarrollado, orientado a la ges
 
 ## Funcionalidad principal
 
-- **Pantalla de inicio:** Permite seleccionar el perfil de acceso: Cliente o Administrador.
+- **Pantalla de inicio:** Permite seleccionar el perfil de acceso: Cliente o Administrador. Esto ocurre a traves del onclick existente en la carpeta inicio de HTML.
 
-- **Login de administrador:** El administrador debe autenticarse con usuario y contraseña para acceder al panel de gestión.
+- **Login de administrador:** En caso de haber seleccionado administrador, debera autenticarse con usuario y contraseña para acceder al panel de gestión, esto se aplica a traves de la funcion validacion que tiene manejo de errores para la verificacion del usuarion y la contraseña que lo comparara con los datos almacenados en el archivo JSON. En caso de error se  mostrara un mensaje y tendra la posibilidad de regresar a la pantalla de inicio o intentarlo de nuevo.
 
 - **Panel Administrador:**  
 El Adminstrador podra tener las siguientes cualidades:
@@ -16,6 +16,7 @@ El Adminstrador podra tener las siguientes cualidades:
   - Editar los datos de juegos existentes.
   - Elimina juegos individuales o toda la lista.
   - Busca juegos por nombre o por tipo.
+  Todas estas funciones se gestionan mendiante funciones de JS y actualizan los datos en localStorage.
 
 - **Panel Cliente:**  
 El Cliente podra tener las siguientes cualidades:
@@ -23,6 +24,7 @@ El Cliente podra tener las siguientes cualidades:
   - Busca juegos por nombre o tipo.
   - Selecciona juegos para agregarlos a un carrito de compras simulado.
   - Visualiza los juegos seleccionados en el carrito.
+  Todas estas funciones se gestionan mendiante funciones de JS y actualizan los datos dependiendo de la seleccion realizada.
 
 ## Almacenamiento
 
